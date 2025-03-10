@@ -3,18 +3,35 @@
 #Check if number is valid
 def valid_num(msg):
     while True:#Ask until valid input
-        num = input(msg)
+        num = input(msg).strip()
         try:
             return float(num)
         except ValueError:
             print("Invalid Input")
 
-#Input Two Numbers
-num1 = valid_num("Enter Dividend: ")
-num2 = valid_num("Enter Divisor:  ")
+#ask the user to quit
+def ask_quit():
+    while True:#ask until valid input
+        ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
+        #accept y/yes and n/no
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input. Type only Y/N")
 
-#Divide Two Numbers
-quotient = num1 / num2
+try_again = True
+while try_again:
+    #Input Two Numbers
+    num1 = valid_num("Enter Dividend: ")
+    num2 = valid_num("Enter Divisor:  ")
 
-#Print the quotient
-print(quotient)
+    #Divide Two Numbers
+    quotient = num1 / num2
+
+    #Print the quotient
+    print(quotient)
+    
+    #ask user to quit
+    try_again = ask_quit()
