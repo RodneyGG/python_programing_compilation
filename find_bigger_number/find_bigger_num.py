@@ -15,9 +15,9 @@ def ask_retry():
         #remove the leading and trailing spaces and lower the character
         ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
         #accept yes/y and no/n
-        if ask_user in ("y","yes"):
+        if ask_user in ("y", "yes"):
             return False
-        elif ask_user in ("n","no"):
+        elif ask_user in ("n", "no"):
             return True
         else:
             print("Invalid Input")
