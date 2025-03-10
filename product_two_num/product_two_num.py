@@ -14,9 +14,9 @@ def ask_quit():
     while True:#ask until valid input
         ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
         #accept y/yes or n/no
-        if ask_user in ("y","yes"):
+        if ask_user in ("y", "yes"):
             return False
-        elif ask_user in ("n","no"):
+        elif ask_user in ("n", "no"):
             return True
         else:
             print("Invalid Input. Only Enter Y/N")
