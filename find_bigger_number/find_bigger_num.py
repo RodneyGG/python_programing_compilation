@@ -9,14 +9,32 @@ def valid_num(msg):
         except ValueError:
             print("Invalid Input")
 
-#Input Two Numbers
-num1 = valid_num("Enter Number 1: ")
-num2 = valid_num("Enter Number 2: ")
+#Ask the user if it want to continue            
+def ask_retry():
+    while True: # ask until the user give a valid input
+        #remove the leading and trailing spaces and lower the character
+        ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
+        #accept yes/y and no/n
+        if ask_user in ("y","yes"):
+            return False
+        elif ask_user in ("n","no"):
+            return True
+        else:
+            print("Invalid Input")
+            
+try_again = True
 
-#Find the bigger number
-if num1 > num2:
-    #print the bigger number
-    print(num1)
-else: 
-    #print the bigger number
-    print(num2)
+while try_again:
+    #Input Two Numbers
+    num1 = valid_num("Enter Number 1: ")
+    num2 = valid_num("Enter Number 2: ")
+
+    #Find the bigger number
+    if num1 > num2:
+        #print the bigger number
+        print(num1)
+    else: 
+        #print the bigger number
+        print(num2)
+        
+    try_again = ask_retry()
