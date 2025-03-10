@@ -13,9 +13,9 @@ def valid_num(msg):
 def ask_quit():
     while True:
         ask_user = input("Do you want to quit the program? (Y/N)").lower().strip()
-        if ask_user in ("y","yes"):
+        if ask_user in ("y", "yes"):
             return False
-        elif ask_user in ("n","no"):
+        elif ask_user in ("n", "no"):
             return True
         else:
             print("Invalid Input. Only Enter Y/N")
