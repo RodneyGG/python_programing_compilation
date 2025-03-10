@@ -9,12 +9,29 @@ def valid_num(msg):
         except ValueError:
             print("Invalid Input")
         
-#Input Two Numbers
-num1 = valid_num("Enter Number: ")
-num2 = valid_num("Enter Exponent: ")
+#ask user to quit
+def ask_quit():
+    while True:
+        ask_user = input("Do you wish to exit the program? (Y/N)").lower().strip()
+        #accept y/yes and n/no
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input")
+            
+try_again = True
 
-#Make the formula num1^num2
-answer = num1 ** num2
+while try_again:
+    #Input Two Numbers
+    num1 = valid_num("Enter Number: ")
+    num2 = valid_num("Enter Exponent: ")
 
-#print answer
-print(answer)
+    #Make the formula num1^num2
+    answer = num1 ** num2
+
+    #print answer
+    print(answer)
+    
+    try_again = ask_quit()
