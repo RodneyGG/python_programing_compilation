@@ -9,13 +9,29 @@ def valid_num(msg):
         except ValueError:
             print("Invalid Input")
 
+#ask user to quit
+def ask_quit():
+    while True:#ask until valid response
+        ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input")
+
 #Add a list to append the numbers
 numbers = []
+try_again = True
 
-#Ask user to input Ten numbers
-for i in range(0,10):
-    num = valid_num(f"Enter Number {i + 1}: ")
-    numbers.append(num)
+while try_again:
+    #Ask user to input Ten numbers
+    for i in range(0,10):
+        num = valid_num(f"Enter Number {i + 1}: ")
+        numbers.append(num)
 
-#Add ten numbers and print the result
-print(sum(numbers))
+    #Add ten numbers and print the result
+    print(sum(numbers))
+    
+    #ask the user to quit
+    try_again = ask_quit()
