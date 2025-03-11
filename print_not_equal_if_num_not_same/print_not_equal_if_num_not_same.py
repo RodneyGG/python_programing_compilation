@@ -9,11 +9,29 @@ def valid_num(msg):
         except ValueError:
             print("Invalid Input")
 
-#Input Two numbers
-num1 = valid_num("Enter Number 1: ")
-num2 = valid_num("Enter Number 2: ")
+#ask user to quit
+def ask_quit():
+    while True:#Ask until valid response
+        ask_user = input("Do you wish to exit the program? (Y/N)").lower().strip()
+        #accept y/yes and n/no
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input")
+        
+try_again = True
 
-#Check if num is the not the same
-if num1 != num2: 
-    #if number is not the same print "Not Equal"
-    print("Not Equal")
+while try_again:
+    #Input Two numbers
+    num1 = valid_num("Enter Number 1: ")
+    num2 = valid_num("Enter Number 2: ")
+
+    #Check if num is the not the same
+    if num1 != num2: 
+        #if number is not the same print "Not Equal"
+        print("Not Equal")
+    
+    #ask user to quit
+    try_again = ask_quit()
