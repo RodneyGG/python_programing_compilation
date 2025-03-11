@@ -9,21 +9,39 @@ def valid_num(msg):
             return float(num)
         except ValueError:
             print("Invalid Input")
+            
+#ask user to quit
+def ask_quit():
+    while True:
+        ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else: 
+            print("Invalid Input")
+    
 
-#List of numbers
-numbers = []
-unique_numbers = []
+try_again = True
 
-#Ask the user to input 10 numbers
-for i in range(0,10):
-    number = valid_num(f"Enter Number {i + 1}: ")
-    numbers.append(number)
+while try_again:
 
-#Check the number that has no duplicate
-for num in numbers:
-    if numbers.count(num) == 1:
-        unique_numbers.append(num)
+    #List of numbers
+    numbers = []
+    unique_numbers = []
 
-#Print numbers that has no dubplicates
-print(unique_numbers)
+    #Ask the user to input 10 numbers
+    for i in range(0,10):
+        number = valid_num(f"Enter Number {i + 1}: ")
+        numbers.append(number)
 
+    #Check the number that has no duplicate
+    for num in numbers:
+        if numbers.count(num) == 1:
+            unique_numbers.append(num)
+
+    #Print numbers that has no dubplicates
+    print(unique_numbers)
+
+    #ask user to quit 
+    try_again = ask_quit()
