@@ -9,12 +9,28 @@ def valid_num(msg):
         except ValueError:
             print("Invalid Input")
 
-#Ask the user to input two numbers
-dividend = valid_num("Enter Dividend: ")
-divisor = valid_num("Enter Divisor: ")
+#ask user to quit
+def ask_quit():
+    while True: #Ask until valid response
+        ask_user = input("Do you wish to exit the program? (Y/N)").lower().strip()
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else: 
+            print("Invalid Input")
+            
+try_again = True
 
-#Find the quotient without the decimal(floor division)
-quotient = int(dividend // divisor)
+while try_again:
+    #Ask the user to input two numbers
+    dividend = valid_num("Enter Dividend: ")
+    divisor = valid_num("Enter Divisor: ")
 
-#Print the quotient
-print(quotient)
+    #Find the quotient without the decimal(floor division)
+    quotient = int(dividend // divisor)
+
+    #Print the quotient
+    print(quotient)
+    
+    try_again = ask_quit()
