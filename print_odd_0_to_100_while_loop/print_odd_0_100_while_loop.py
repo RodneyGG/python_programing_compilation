@@ -2,6 +2,8 @@
 #print 0 to 100 using while loop
 num = 0
 while num <= 100:
-    print(num)
-    num += 1
     #if number is odd print odd
+    if num % 2 != 0:
+        print(num)
+    num += 1
+    
