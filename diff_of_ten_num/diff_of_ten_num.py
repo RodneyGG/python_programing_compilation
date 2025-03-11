@@ -8,18 +8,36 @@ def valid_num(msg):
             return float(num)
         except ValueError:
             print("Invalid Input")
+            
+#ask user to quit 
+def ask_quit():
+    while True:
+        ask_user = input("Do you wish to exit the program? (Y/N)").lower().strip()
+        if ask_user in ("y","yes"):
+            return False
+        elif ask_user in ("n","no"):
+            return True
+        else:
+            print("Invalid input") 
 
-#store the numbers in the list
-numbers = []
+try_again = True
 
-#Ask the user to input ten numbers
-for i in range(0,10):
-    number = valid_num(f"Input Number {i + 1}: ")
-    numbers.append(number)
+while try_again:
+    #store the numbers in the list
+    numbers = []
+
+    #Ask the user to input ten numbers
+    for i in range(0,10):
+        number = valid_num(f"Input Number {i + 1}: ")
+        numbers.append(number)
+        
+    #Make the first number the intial result and subtract it with the next numbers
+    result = numbers[0]
+    for num in numbers[1:]:
+        result -= num 
     
-#Make the first number the intial result and subtract it with the next numbers
-result = numbers[0]
-for num in numbers[1:]:
-    result -= num 
-#Print Answer
-print(result)
+    #Print Answer
+    print(result)
+    
+    #ask user to quit
+    try_again = ask_quit()
