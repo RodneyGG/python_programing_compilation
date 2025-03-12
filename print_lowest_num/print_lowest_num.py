@@ -8,23 +8,30 @@ def handle_error(msg):
         try:
             return float(num)
         except ValueError:
-            if numbers:
-                print(lowest_num)
-            else:
-                break
+            return None
 
 #Make a list to store the numbers
 numbers = []
 
 
-
+break_loop = True
 #Ask user to input a number until error has occured
-while True:
+while break_loop:
     num = handle_error("Enter a Number: ")
+    
+    if num is None:
+        break
+    
     #append numbers to the list 
     numbers.append(num)
+    
+
+if numbers:
     #identify which is the smaller number
     lowest_num = min(numbers)
+    print(lowest_num)
+else:
+    print("No Valid Numbers Entered")    
     
     
     
