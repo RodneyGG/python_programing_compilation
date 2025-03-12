@@ -29,7 +29,7 @@ while try_again:
     numbers = set()
 
     #Ask user to input ten numbers
-    for i in range(0,10):
+    for i in range(0, 10):
         num = valid_num(f"Enter Number {i + 1}: ")
         #Add the number to the set
         numbers.add(num)
