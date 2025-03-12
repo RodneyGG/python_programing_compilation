@@ -13,13 +13,11 @@ def handle_error(msg):
 #Make a list to store the numbers
 numbers = []
 
-
-break_loop = True
 #Ask user to input a number until error has occured
-while break_loop:
+while True:
     num = handle_error("Enter a Number: ")
     
-    if num is None:
+    if num is None:#If num is a blank it will break
         break
     
     #append numbers to the list 
