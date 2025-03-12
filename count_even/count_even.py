@@ -27,7 +27,7 @@ while try_again:
     count = 0
 
     #Ask the user to input ten numbers
-    for i in range(0,10):
+    for i in range(0, 10):
         num = valid_num(f"Enter Number {i + 1}: ")
         #count even numbers
         if num % 2 == 0 and num.is_integer():
