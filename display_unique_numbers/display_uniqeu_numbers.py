@@ -31,7 +31,7 @@ while try_again:
     unique_numbers = []
 
     #Ask the user to input 10 numbers
-    for i in range(0,10):
+    for i in range(0, 10):
         number = valid_num(f"Enter Number {i + 1}: ")
         numbers.append(number)
 
