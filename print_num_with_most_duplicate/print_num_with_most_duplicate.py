@@ -10,10 +10,12 @@ def handle_error(msg):
         return float(num)
     except ValueError:
         return None
+    
+
 
 #make a dictionary
 count_numbers = {}
-numbers = []
+
 
 #Ask user to input a number until an error has occured
 while True:
@@ -22,16 +24,22 @@ while True:
     if number is None:
         break
     
-    numbers.append(number)
     
     #add to the dictionary
-    for num in numbers:
-        count_numbers[num] = count_numbers.get(num, 0) + 1
+    count_numbers[number] = count_numbers.get(number, 0) + 1
         
     
 
 if count_numbers:
+    #find the most duplicate number
+    highest_count = max(count_numbers.values())
+    
+    most_duplicate = []
+    
     #Find the number with the most duplicate
-    most_duplicate = max(count_numbers, key=count_numbers.get)
+    for num, count in count_numbers.items():
+        if count == highest_count:
+            most_duplicate.append(num)
+    
     #print the number
     print(most_duplicate)
