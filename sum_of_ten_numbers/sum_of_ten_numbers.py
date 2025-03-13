@@ -26,7 +26,7 @@ try_again = True
 
 while try_again:
     #Ask user to input Ten numbers
-    for i in range(0,10):
+    for i in range(0, 10):
         num = valid_num(f"Enter Number {i + 1}: ")
         numbers.append(num)
 
