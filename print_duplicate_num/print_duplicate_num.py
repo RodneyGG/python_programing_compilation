@@ -30,7 +30,7 @@ try_again = True
 
 while try_again:
     #ask user to print ten numbers
-    for i in range(0,10):
+    for i in range(0, 10):
         num = valid_num(f"Enter a number {i + 1}: ")
         #Append all numbers in the list
         if num in numbers:
